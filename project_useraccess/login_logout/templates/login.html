@@ -1,0 +1,41 @@
+
+
+{% block content %}
+   
+    
+<br/><br/><br/>
+<div align="center">
+    <form method="POST" >
+        {% csrf_token %}
+        <div class="login">
+            <div class="login-screen">
+                <div class="app-title">
+                    <h1>Login</h1>
+                </div>
+                <div class="login-form">
+                    <div class="control-group", >
+                        <input type="text" class="login-field" style="width: calc(8.0em + 8.0rem + 5px);"  value="" placeholder="username" name="username">
+                        <label class="login-field-icon fui-user" for="login-name"></label>
+                        <br/><br/>
+                    </div>
+                <div class="control-group">
+                    <input type="password" class="login-field" style="width: calc(8.0em + 8.0rem + 5px);" value="" placeholder="password" name="password">
+                    <label class="login-field-icon fui-lock" for="login-pass"></label>
+                </div>
+                    <br/><br/>
+                    <input type="submit" value="Log in" class="btn btn-primary btn-large btn-block">
+                </div>
+            </div>
+        </div>
+    {% endblock %}
+    <br/><br/><br/>
+    {% if error_message %}
+        <p color="red">{{ error_message }}</p>
+    {% endif %}
+    </form>   
+</div>
+
+
+
+
+
